@@ -1,0 +1,961 @@
+﻿;PSGG Editor Backup File
+version=1.1
+file=TestControl.xlsx
+guid=981f27d4-038d-41d4-9d31-dea427f4a8b1
+;set read_from  excel or psgg
+read_from=psgg
+;set savemode with_excel or psgg_only
+save_mode=psgg_only
+;set check_excel_writable yes or no
+check_excel_writable=no
+
+------#======*<Guid(D13821FE-FA27-4B04-834C-CEC1E5670F48)>*======#------
+
+sheet=state-chart
+nameid_list=,n001,n002,n01c,n003,n004,n005,n006,,n007,,n008,,n009,n00a,n00b,n00c,,n00d,n00e,,n00f,n010,,n011,n012,,n013,n014,,,n022,n01e,n01f,n020,,n015,n016,n017,n018,,n019,n01a,n01b,,,,,,
+stateid_list=,,,,,,,,,,,,,,,,,,,s000e,s000f,s0010,s0011,s0012,s0013,s0014,s0015,s0016,s0017,s0018,s0019,s001a,s001b,s001c,s001d,s001e,s001f,s0020,s0021
+max_name_id=34
+max_state_id=33
+[id_name_dic]
+n001=thumbnail
+n002=state
+n003=state-cmt
+n004=state-ref
+n005=basestate
+n006=nextstate
+n007=embed
+n008=members
+n009=vars
+n00a=init
+n00b=init-cmt
+n00c=init-ref
+n00d=update
+n00e=update-cmt
+n00f=wait
+n010=wait-cmt
+n011=post_wait
+n012=post_wait-cmt
+n013=gosubstate
+n014=return
+n015=branch
+n016=branch-cmt
+n017=brcond
+n018=nowait
+n019=!dir
+n01a=!pos
+n01b=!uuid
+n01c=state-typ
+n01e=loop_init
+n01f=loop_cond
+n020=loop_next
+n022=loop
+
+
+[id_state_dic]
+s000e=S_START
+s000f=S_END
+s0010=S_0000
+s0011=S_0001
+s0012=S_0002
+s0013=S_0003
+s0014=S_0004
+s0015=S_0005
+s0016=S_0006
+s0017=S_GSB000
+s0018=S_SBS000
+s0019=S_0007
+s001a=S_RET000
+s001b=S_SBS001
+s001c=S_RET001
+s001d=S_LOP000
+s001e=S_WAIT1SEC
+s001f=E_0001
+s0020=S_0008
+s0021=C_0001
+
+
+[s000e]
+n002=S_START
+n01c=start
+n006=S_0000
+n019=@@@
+/
+(100,100)
+The root
+@@@
+
+n01a=100,100
+n01b=1
+
+[s000f]
+n002=S_END
+n01c=end
+n019=@@@
+/
+(100,100)
+The root
+@@@
+
+n01a=1738,11
+n01b=2
+
+[s0010]
+n002=S_0000
+n006=S_0008
+n00a=trace("Hello World!");
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=232,100
+n01b=3
+
+[s0011]
+n002=S_0001
+n008=var m_val : Int;
+n009=@@@
+var sec = Date.now().getSeconds();
+var n = sec % 5;
+@@@
+
+n011=m_val = n;
+n015=@@@
+brifc(S_0002);
+brelseifc(S_0003);
+brelseifc(S_0004);
+brelseifc(S_0005);
+brelse(S_0006);
+@@@
+
+n016=@@@
+?
+?
+?
+?
+?
+@@@
+
+n017=@@@
+n == 0
+n == 1
+n == 2
+n == 3
+?
+@@@
+
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=952,278
+n01b=4
+
+[s0012]
+n002=S_0002
+n006=S_WAIT1SEC
+n00a=trace("Zero");
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=1213,245
+n01b=5
+
+[s0013]
+n002=S_0003
+n006=S_WAIT1SEC
+n00a=trace("First");
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=1215,331
+n01b=6
+
+[s0014]
+n002=S_0004
+n006=S_WAIT1SEC
+n00a=trace("Two");
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=1214,410
+n01b=7
+
+[s0015]
+n002=S_0005
+n006=S_WAIT1SEC
+n00a=trace("Three");
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=1217,495
+n01b=8
+
+[s0016]
+n002=S_0006
+n006=S_WAIT1SEC
+n00a=trace('$m_val');
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=1216,582
+n01b=9
+
+[s0017]
+n002=S_GSB000
+n01c=gosub
+n006=S_LOP000
+n013=S_SBS000
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=54,548
+n01b=10
+
+[s0018]
+n002=S_SBS000
+n01c=substart
+n006=S_0007
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=66,688
+n01b=11
+
+[s0019]
+n002=S_0007
+n006=S_RET000
+n00a=trace("In Subroutine!");
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=174,656
+n01b=12
+
+[s001a]
+n002=S_RET000
+n01c=subreturn
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=369,705
+n01b=13
+
+[s001b]
+n002=S_SBS001
+n01c=substart
+n006=S_0001
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=653,427
+n01b=14
+
+[s001c]
+n002=S_RET001
+n01c=subreturn
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=1815,428
+n01b=15
+
+[s001d]
+n002=S_LOP000
+n01c=loop
+n006=S_END
+n008=var m_index : Int;
+n013=S_SBS001
+n01e=m_index = 0;
+n01f=m_index < 10
+n020=m_index++;
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=323,356
+n01b=16
+
+[s001e]
+n002=S_WAIT1SEC
+n006=S_RET001
+n008=var m_[[state]] : Int;
+n00a=m_[[state]] = Date.now().getSeconds();
+n00f=m_[[state]] == Date.now().getSeconds()
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=1549,426
+n01b=17
+
+[s001f]
+n002=E_0001
+n007=var m_msg : String;
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=464,26
+n01b=18
+
+[s0020]
+n002=S_0008
+n006=S_GSB000
+n00a=@@@
+m_msg = "Use m_msg.";
+trace(m_msg);
+@@@
+
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=439,100
+n01b=19
+
+[s0021]
+n002=C_0001
+n003=HAXE EXAMPLE
+n019=@@@
+/
+(100,100)
+
+@@@
+
+n01a=18,22
+n01b=20
+
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=config
+
+###VARIOUS-CONTENTS-BEGIN###
+; The setting was created automatically. 2020/08/14 9:42:40
+; * pssgEditor version : 0.66.5030.be6b2a7a2f9e64d0160759469b371cf04a1c84a1
+psggfile=@@@
+TestControl.psgg
+@@@
+xlsfile=@@@
+TestControl.xlsx
+@@@
+guid=@@@
+981f27d4-038d-41d4-9d31-dea427f4a8b1
+@@@
+bitmap_width=5000
+bitmap_height=2000
+c_statec_cmt=1
+c_thumbnail=1
+c_contents=1
+force_display_outpin=0
+last_action=@@@
+init,Saved
+@@@
+target_pathdir=@@@
+/
+@@@
+state_location_list=@@@
+
+@@@
+nodegroup_comment_list=@@@
+[{"Key":"\/","Value":"The root"}]
+@@@
+nodegroup_pos_list=@@@
+[{"Key":"\/","Value":{"x":100,"y":100}}]
+@@@
+fillter_state_location_list=@@@
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":100,"y":100}},{"Key":"S_END","Value":{"x":1738,"y":11}},{"Key":"S_0000","Value":{"x":232,"y":100}},{"Key":"S_0001","Value":{"x":952,"y":278}},{"Key":"S_0002","Value":{"x":1213,"y":245}},{"Key":"S_0003","Value":{"x":1215,"y":331}},{"Key":"S_0004","Value":{"x":1214,"y":410}},{"Key":"S_0005","Value":{"x":1217,"y":495}},{"Key":"S_0006","Value":{"x":1216,"y":582}},{"Key":"S_GSB000","Value":{"x":54,"y":548}},{"Key":"S_SBS000","Value":{"x":66,"y":688}},{"Key":"S_0007","Value":{"x":174,"y":656}},{"Key":"S_RET000","Value":{"x":369,"y":705}},{"Key":"S_SBS001","Value":{"x":653,"y":427}},{"Key":"S_RET001","Value":{"x":1815,"y":428}},{"Key":"S_LOP000","Value":{"x":323,"y":356}},{"Key":"S_WAIT1SEC","Value":{"x":1549,"y":426}},{"Key":"E_0001","Value":{"x":464,"y":26}},{"Key":"S_0008","Value":{"x":439,"y":100}},{"Key":"C_0001","Value":{"x":18,"y":22}}]},{"Key":"\/hoge2\/","Value":[{"Key":"S_START","Value":{"x":50,"y":100}},{"Key":"S_END","Value":{"x":926,"y":87}}]}]
+@@@
+linecolor_data=@@@
+[{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
+@@@
+use_external_command=0
+external_command=@@@
+
+@@@
+source_editor_set=@@@
+
+@@@
+label_show=0
+label_text=@@@
+test
+@@@
+option_delete_thisstring=1
+option_delete_br_string=1
+option_delete_bracket_string=1
+option_delete_s_state_string=1
+option_copy_output_to_clipboard=0
+option_convert_with_confirm=0
+option_ignore_case_of_state=0
+option_editbranch_automode=1
+option_use_custom_prefix=0
+option_omit_basestate_string=0
+option_hide_basestate_contents=1
+option_hide_branchcmt_onbranchbox=0
+font_name=@@@
+MS UI Gothic
+@@@
+font_size=11
+comment_font_size=13
+contents_font_size=10
+state_width=140
+state_height=20
+state_short_width=50
+state_short_height=20
+comment_block_height=20
+content_max_height=200
+comment_block_fixed=0
+line_space=-1
+userbutton_title=@@@
+
+@@@
+userbutton_command=@@@
+
+@@@
+userbutton_callafterconvert=0
+itemeditform_size_list=@@@
+[{"Key":"state-typ","Value":{"height":398,"width":330}}]
+@@@
+decoimage_typ_name=@@@
+sym
+@@@
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-source
+
+###VARIOUS-CONTENTS-BEGIN###
+
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=template-statefunc
+
+###VARIOUS-CONTENTS-BEGIN###
+<<<?state/^C_/
+eof>>>
+
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+
+<<<?state/^E_/
+[[embed]]
+eof>>>
+
+<<<?state-typ/^start$/
+function [[state]](bFirst : Bool)
+{
+    Goto($statemachine$_STATE.[[nextstate]]);
+    NoWait();
+}
+eof>>>
+
+<<<?state-typ/^end$/
+function [[state]](bFirst : Bool)
+{
+}
+eof>>>
+
+<<<?state-typ/^gosub$/
+function [[state]](bFirst : Bool)
+{
+    GoSubState($statemachine$_STATE.[[gosubstate]],$statemachine$_STATE.[[nextstate]]);
+    NoWait();
+}
+eof>>>
+
+<<<?state-typ/^substart$/
+function [[state]](bFirst : Bool)
+{
+    Goto($statemachine$_STATE.[[nextstate]]);
+    NoWait();
+}
+eof>>>
+
+<<<?state-typ/^subreturn$/
+function [[state]](bFirst : Bool)
+{
+    ReturnState();
+    NoWait();
+}
+eof>>>
+
+<<<?state-typ/^loop$/
+[[members]]
+function [[state]](bFirst : Bool)
+{
+    [[loop_init]]
+    Goto($statemachine$_STATE.[[state]]_Check____);
+    NoWait();
+}
+function [[state]]_Check____(bFirst : Bool)
+{
+    if ([[loop_cond]]) GoSubState($statemachine$_STATE.[[gosubstate]],$statemachine$_STATE.[[state]]_Next____);
+    else               Goto($statemachine$_STATE.[[nextstate]]);
+    NoWait();
+}
+function [[state]]_Next____(bFirst : Bool)
+{
+    [[loop_next]]
+    Goto($statemachine$_STATE.[[state]]_Check____);
+    NoWait();
+}
+eof>>>
+
+[[members]]
+function [[state]](bFirst : Bool)
+{
+    [[vars]]
+
+    <<<?init
+    //
+    if (bFirst)
+    {
+        [[init]]
+    }
+    >>>
+
+    [[update]]
+
+    <<<?wait
+    if ([[wait]]) return;
+    >>>
+
+    [[post_wait]]
+
+    <<<?branch
+    // branch
+    [[branch]]
+    >>>
+
+    <<<?nextstate
+    //
+    if (!HasNextState())
+    {
+        Goto($statemachine$_STATE.[[nextstate]]);
+    }
+    >>>
+
+    <<<?nowait
+    //
+    if (HasNextState())
+    {
+        NoWait();
+    }
+    >>>
+}
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=setting.ini
+
+###VARIOUS-CONTENTS-BEGIN###
+[setting]
+
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+@@@
+
+
+
+
+
+
+
+psgg=TestControl.psgg
+xls=TestControl.xlsx
+sub_src=
+gen_src=TestControl.hx
+
+manager_src=
+manager_dir=
+
+template_src=
+template_func=template-statefunc.txt
+
+help=help.ini
+helpweb=starterkit2\haxe\helpweb.html
+
+src_enc=utf-8
+
+
+
+
+
+
+kitpath=starterkit2\haxe
+[setupinfo]
+
+starterkit=@@@
+https://github.com/NNNIC/psgg-starter-kit.git GIT-COMMIT-HASH
+@@@
+
+
+
+
+
+
+
+lang=haxe
+framework=
+
+statemachine=TestControl
+prefix=__PREFIX__
+xlsdir=G:\statego\samples\haxe-test\m1\src
+
+
+
+gendir=G:\statego\samples\haxe-test\m1\src
+
+
+
+genrdir=.
+incrdir=.
+
+code_output_start=[PSGG OUTPUT START]
+code_output_end=[PSGG OUTPUT END]
+
+
+
+
+
+[jpn]
+
+title=Haxe スタートキット  2019/10/31
+
+detail=@@@
+Haxe 用のステートマシンを作成します。
+
+# ファイル
+
+      TestControl.pssg --- StateGoデータファイル。
+      TestControl.hx   --- 変換コードを本ファイルに埋め込む。
+
+@@@
+
+
+
+[en]
+
+title=HAXE STARTER KIT 2019/10/31
+
+detail=@@@
+To create HAXE Stata machine.
+
+# File:
+
+      TestControl.pssg  --- StateGo Data File.
+      TestControl.hx   -- The editor will insert converted source code to this file.
+
+@@@
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=help
+
+###VARIOUS-CONTENTS-BEGIN###
+[nextstate]
+
+jpn=次に実行するステートを指定する。
+en=Specify the next state to be executed.
+[branch]
+
+jpn=@@@
+分岐処理を指定する。
+１行に一つの分岐命令を書く。
+GUIにより上書きされるため引数は適当に指定する。
+例）
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+en=@@@
+Specify branch functions.
+Each line has a branch function.
+Specify a tentavie parameter for each branch function because GUI overwrites the parameter.
+i.e)
+br_YES(?);
+br_NO(?);
+br_UNKNOWN(?);
+@@@
+
+[update]
+
+jpn=更新処理を指定する。
+en=Specify a update process.
+[wait]
+
+jpn=@@@
+待ち条件を指定する。
+true時にループを解除する。
+@@@
+
+en=@@@
+Specify a waiting condition.
+Release the loop if the condition is true.
+@@@
+
+[gosubstate]
+
+jpn=@@@
+サブルーチンを呼び出す。
+サブルーチンの開始ステート名を指定する。
+@@@
+
+en=@@@
+Call a subroutine.
+Specify the starting state name of the subroutine.
+@@@
+
+[return]
+
+jpn=サブルーチン処理を終了するときに指定する。"return"等を記述。
+en=@@@
+Use for returning from the subroutine. Write "return" etc.
+@@@
+
+[loop_next]
+
+en=loop  iterator advence.
+jpn=ループのイテレーターを更新
+[loop_cond]
+
+en=loop condition
+jpn=ループ条件
+[state]
+
+jpn=@@@
+ステート名を指定する。
+英文字、数字、アンダーバーで構成される。
+先頭は英文字およびアンダーバー。
+@@@
+
+en=@@@
+Specify a state name.
+The state name consits of alphabet, number and underbar except that the head characther should be alphabet or a underbar.
+@@@
+
+[members]
+
+jpn=メンバ変数及び関数等を指定する。
+en=@@@
+Specify members, variables, classes,  etc.
+@@@
+
+[post_wait]
+
+jpn='wait'後の処理を指定する。
+en=Specify the post process after 'wait'.
+[vars]
+
+jpn=変数宣言を指定する。
+en=Specify variable definitions.
+[nowait]
+
+jpn=@@@
+次のステートへ同期待ちをせず実行する時に 'nowait'等を指定する。
+同期待ち時には何も指定しない。
+@@@
+
+en=@@@
+Specify 'nowait' and so on if the next state will be execute without a sync wait.
+Do not specify any word wheh the next state will be execute with a sync wait.
+@@@
+
+[embed]
+
+jpn=@@@
+コード埋め込み用。
+ステート名がE_時に利用可能。
+ステート機能は利用できない。
+@@@
+
+en=@@@
+For embedding code.
+Enable this section if state name starts with "E_".
+Disabled state features.
+@@@
+
+[basestate]
+
+jpn=継承元を指定する。
+en=Specify inheritance source.
+[!uuid]
+
+jpn=システムがステートのuuid指定に使用。
+en=@@@
+System uses this for the uuid of the state.
+@@@
+
+[init]
+
+jpn=初期化用処理を指定する。
+en=Specify a initial process.
+[!dir]
+
+jpn=システムがステートのディレクトリ指定に使用。
+en=@@@
+System uses this for the directory path of the state.
+@@@
+
+[loop_init]
+
+en=loop initialization
+jpn=ループ用初期化
+[thumbnail]
+
+jpn=説明用のイメージを指定する。
+en=@@@
+Specify a image for explanation of this state.
+@@@
+
+[loop_break]
+
+en=Condition if break
+###VARIOUS-CONTENTS-END###
+
+
+------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
+
+sheet=itemsinfo
+
+###VARIOUS-CONTENTS-BEGIN###
+[inpmethod]
+
+init=
+branch-cmt=
+state-ref=
+wait=
+loop-next=
+loop-cond=
+embed=
+loop_cond=
+branch=
+!dir=
+basestate=
+return=
+post_wait-cmt=
+state-cmt=
+nowait=@@@
+*select
+nowait
+@@@
+
+members=
+thumbnail=
+update-cmt=
+gosubstate=
+loop_break=
+loop_ver=
+state-typ=@@@
+*select
+start
+end
+gosub
+substart
+subreturn
+loop
+@@@
+
+!pos=
+!uuid=
+S_=
+nextstate=
+state=
+loop_var=
+wait-cmt=
+loop-init=
+update=
+init-cmt=
+loop-ver=
+loop_next=
+vars=
+loop=
+C_=
+brcond=
+E_=
+init-ref=
+loop_init=
+post_wait=
+[stateloc]
+
+E_=S1
+S_=S0
+C_=S2
+[itemcond]
+
+thumbnail=read_only,share,S.+
+gosubstate=read_only,exclusion,S0
+branch=read_only,exclusion,S0
+state=read_only,share,S.+
+nextstate=read_only,exclusion,S0
+return=read_only,exclusion,S0
+brcond=read_only,exclusion,S0
+embed=read_only,exclusion,S1
+basestate=read_only,share,S.+
+state-typ=read_only,exclusion,(S0)
+###VARIOUS-CONTENTS-END###
+
+
+
+------#======*<Guid(4DC98CBA-6257-4E26-A454-A53F85BC234C)>*======#------
+
+
