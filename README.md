@@ -23,6 +23,8 @@ StateGo will output src/TestControl.hx by converting.
 
 # Compile & Run
 
+Use batch to compile & Run.
+
 ## CPP
 
 <pre>
