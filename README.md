@@ -38,13 +38,30 @@ run_cpp.bat
 ToCSharp.bat
 </pre>
 
-## 
+## Javascript
+
+<pre>
+ToJs.bat
+</pre>
 
 
+![](https://raw.githubusercontent.com/NNNIC/psgg-haxe-sample/master/wiki/output-js.png)
+
+## Java
+
+<pre>
+ToJava.bat
+</pre>
+
+![](https://raw.githubusercontent.com/NNNIC/psgg-haxe-sample/master/wiki/output-java.gif)
 
 
+## Python
 
+<pre>
+ToPython.bat
+</pre>
 
-
+![](https://raw.githubusercontent.com/NNNIC/psgg-haxe-sample/master/wiki/output-py.gif)
 
 
