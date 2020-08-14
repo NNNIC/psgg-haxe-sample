@@ -45,7 +45,7 @@ ToJs.bat
 </pre>
 
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-haxe-sample/master/wiki/output-js.png)
+![](https://raw.githubusercontent.com/NNNIC/psgg-haxe-sample/master/wiki/output_js.png)
 
 ## Java
 
