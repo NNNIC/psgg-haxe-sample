@@ -30,7 +30,7 @@ compile_cpp.bat
 run_cpp.bat
 </pre>
 
-![](https://raw.githubusercontent.com/NNNIC/psgg-haxe-sample/master/wiki/output_cpp.gif)
+![](https://raw.githubusercontent.com/NNNIC/psgg-haxe-sample/master/wiki/output-cpp.gif)
 
 ## C#
 
